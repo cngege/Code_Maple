@@ -35,10 +35,11 @@
             this.PlayerUI = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.playspeed = new System.Windows.Forms.ProgressBar();
+            this.Down = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.img_forware = new System.Windows.Forms.PictureBox();
             this.img_play = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Info = new System.Windows.Forms.Button();
             this.BackImage.SuspendLayout();
             this.PlayerUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_forware)).BeginInit();
@@ -48,7 +49,8 @@
             // BackImage
             // 
             this.BackImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
-            this.BackImage.Controls.Add(this.button1);
+            this.BackImage.Controls.Add(this.Info);
+            this.BackImage.Controls.Add(this.Down);
             this.BackImage.Controls.Add(this.btn_exit);
             this.BackImage.Controls.Add(this.PlayerUI);
             this.BackImage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,6 +97,20 @@
             this.playspeed.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.playspeed.TabIndex = 2;
             // 
+            // Down
+            // 
+            this.Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Down.BackgroundImage = global::枫.Properties.Resources.Download;
+            this.Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Down.FlatAppearance.BorderSize = 0;
+            this.Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Down.Location = new System.Drawing.Point(617, 12);
+            this.Down.Name = "Down";
+            this.Down.Size = new System.Drawing.Size(15, 15);
+            this.Down.TabIndex = 1;
+            this.Down.UseVisualStyleBackColor = true;
+            this.Down.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
+            // 
             // btn_exit
             // 
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -134,19 +150,19 @@
             this.img_play.TabIndex = 0;
             this.img_play.TabStop = false;
             // 
-            // button1
+            // Info
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::枫.Properties.Resources.Download;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(619, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 15);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
+            this.Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Info.BackgroundImage = global::枫.Properties.Resources.info;
+            this.Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Info.FlatAppearance.BorderSize = 0;
+            this.Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Info.Location = new System.Drawing.Point(577, 12);
+            this.Info.Name = "Info";
+            this.Info.Size = new System.Drawing.Size(15, 15);
+            this.Info.TabIndex = 1;
+            this.Info.UseVisualStyleBackColor = true;
+            this.Info.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
             // 
             // PlayerMenu
             // 
@@ -179,7 +195,8 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Label Title;
         public System.Windows.Forms.ProgressBar playspeed;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Down;
+        private System.Windows.Forms.Button Info;
     }
 }
 
