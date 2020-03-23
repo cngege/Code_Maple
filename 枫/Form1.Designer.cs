@@ -35,23 +35,26 @@
             this.PlayerUI = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.playspeed = new System.Windows.Forms.ProgressBar();
-            this.Down = new System.Windows.Forms.Button();
-            this.btn_exit = new System.Windows.Forms.Button();
             this.img_forware = new System.Windows.Forms.PictureBox();
             this.img_play = new System.Windows.Forms.PictureBox();
+            this.Title_Menu = new System.Windows.Forms.Panel();
             this.Info = new System.Windows.Forms.Button();
+            this.Down = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.DownProgress = new System.Windows.Forms.Label();
+            this.Desc_Label = new System.Windows.Forms.Label();
             this.BackImage.SuspendLayout();
             this.PlayerUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_forware)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_play)).BeginInit();
+            this.Title_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackImage
             // 
             this.BackImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
-            this.BackImage.Controls.Add(this.Info);
-            this.BackImage.Controls.Add(this.Down);
-            this.BackImage.Controls.Add(this.btn_exit);
+            this.BackImage.Controls.Add(this.Desc_Label);
+            this.BackImage.Controls.Add(this.Title_Menu);
             this.BackImage.Controls.Add(this.PlayerUI);
             this.BackImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackImage.Location = new System.Drawing.Point(0, 0);
@@ -69,6 +72,7 @@
             this.PlayerUI.Controls.Add(this.img_play);
             this.PlayerUI.Dock = System.Windows.Forms.DockStyle.Left;
             this.PlayerUI.Location = new System.Drawing.Point(0, 0);
+            this.PlayerUI.Margin = new System.Windows.Forms.Padding(0);
             this.PlayerUI.Name = "PlayerUI";
             this.PlayerUI.Size = new System.Drawing.Size(313, 154);
             this.PlayerUI.TabIndex = 0;
@@ -77,7 +81,7 @@
             // 
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Title.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Title.ForeColor = System.Drawing.Color.White;
             this.Title.Location = new System.Drawing.Point(5, 110);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(303, 34);
@@ -97,38 +101,11 @@
             this.playspeed.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.playspeed.TabIndex = 2;
             // 
-            // Down
-            // 
-            this.Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Down.BackgroundImage = global::枫.Properties.Resources.Download;
-            this.Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Down.FlatAppearance.BorderSize = 0;
-            this.Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Down.Location = new System.Drawing.Point(617, 12);
-            this.Down.Name = "Down";
-            this.Down.Size = new System.Drawing.Size(15, 15);
-            this.Down.TabIndex = 1;
-            this.Down.UseVisualStyleBackColor = true;
-            this.Down.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_exit.BackgroundImage = global::枫.Properties.Resources.AppExit;
-            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_exit.FlatAppearance.BorderSize = 0;
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(660, 12);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(15, 15);
-            this.btn_exit.TabIndex = 1;
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
-            // 
             // img_forware
             // 
             this.img_forware.BackColor = System.Drawing.Color.Transparent;
             this.img_forware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.img_forware.Cursor = System.Windows.Forms.Cursors.Hand;
             this.img_forware.Image = global::枫.Properties.Resources.fast_forward;
             this.img_forware.Location = new System.Drawing.Point(69, 62);
             this.img_forware.Name = "img_forware";
@@ -136,6 +113,7 @@
             this.img_forware.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_forware.TabIndex = 1;
             this.img_forware.TabStop = false;
+            this.img_forware.Click += new System.EventHandler(this.img_forware_Click);
             // 
             // img_play
             // 
@@ -150,6 +128,21 @@
             this.img_play.TabIndex = 0;
             this.img_play.TabStop = false;
             // 
+            // Title_Menu
+            // 
+            this.Title_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.Title_Menu.Controls.Add(this.DownProgress);
+            this.Title_Menu.Controls.Add(this.Info);
+            this.Title_Menu.Controls.Add(this.Down);
+            this.Title_Menu.Controls.Add(this.btn_exit);
+            this.Title_Menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Title_Menu.Location = new System.Drawing.Point(313, 0);
+            this.Title_Menu.Name = "Title_Menu";
+            this.Title_Menu.Size = new System.Drawing.Size(374, 30);
+            this.Title_Menu.TabIndex = 2;
+            this.Title_Menu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Title_Menu_MouseDown);
+            this.Title_Menu.MouseLeave += new System.EventHandler(this.Title_Menu_MouseLeave);
+            // 
             // Info
             // 
             this.Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -157,12 +150,65 @@
             this.Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Info.FlatAppearance.BorderSize = 0;
             this.Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Info.Location = new System.Drawing.Point(577, 12);
+            this.Info.Location = new System.Drawing.Point(312, 8);
             this.Info.Name = "Info";
             this.Info.Size = new System.Drawing.Size(15, 15);
-            this.Info.TabIndex = 1;
+            this.Info.TabIndex = 2;
             this.Info.UseVisualStyleBackColor = true;
-            this.Info.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
+            // 
+            // Down
+            // 
+            this.Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Down.BackgroundImage = global::枫.Properties.Resources.Download;
+            this.Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Down.FlatAppearance.BorderSize = 0;
+            this.Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Down.Location = new System.Drawing.Point(274, 8);
+            this.Down.Name = "Down";
+            this.Down.Size = new System.Drawing.Size(15, 15);
+            this.Down.TabIndex = 3;
+            this.Down.UseVisualStyleBackColor = true;
+            this.Down.Click += new System.EventHandler(this.Down_Click);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_exit.BackgroundImage = global::枫.Properties.Resources.AppExit;
+            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_exit.FlatAppearance.BorderSize = 0;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Location = new System.Drawing.Point(349, 8);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(15, 15);
+            this.btn_exit.TabIndex = 4;
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_exit_MouseClick);
+            // 
+            // DownProgress
+            // 
+            this.DownProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DownProgress.BackColor = System.Drawing.Color.Transparent;
+            this.DownProgress.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DownProgress.Font = new System.Drawing.Font("微软雅黑", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DownProgress.ForeColor = System.Drawing.Color.White;
+            this.DownProgress.Location = new System.Drawing.Point(209, 0);
+            this.DownProgress.Name = "DownProgress";
+            this.DownProgress.Size = new System.Drawing.Size(59, 30);
+            this.DownProgress.TabIndex = 5;
+            this.DownProgress.Text = "OK";
+            this.DownProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Desc_Label
+            // 
+            this.Desc_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Desc_Label.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Desc_Label.ForeColor = System.Drawing.Color.White;
+            this.Desc_Label.Location = new System.Drawing.Point(313, 30);
+            this.Desc_Label.Name = "Desc_Label";
+            this.Desc_Label.Size = new System.Drawing.Size(374, 124);
+            this.Desc_Label.TabIndex = 3;
+            this.Desc_Label.Text = "Desc";
+            this.Desc_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PlayerMenu
             // 
@@ -181,6 +227,7 @@
             this.PlayerUI.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_forware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_play)).EndInit();
+            this.Title_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -192,11 +239,14 @@
         private System.Windows.Forms.Panel PlayerUI;
         private System.Windows.Forms.PictureBox img_play;
         private System.Windows.Forms.PictureBox img_forware;
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Label Title;
         public System.Windows.Forms.ProgressBar playspeed;
-        private System.Windows.Forms.Button Down;
+        private System.Windows.Forms.Panel Title_Menu;
         private System.Windows.Forms.Button Info;
+        private System.Windows.Forms.Button Down;
+        private System.Windows.Forms.Button btn_exit;
+        public System.Windows.Forms.Label DownProgress;
+        private System.Windows.Forms.Label Desc_Label;
     }
 }
 
